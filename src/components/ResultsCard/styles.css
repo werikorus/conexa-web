@@ -1,0 +1,47 @@
+#results-cnpj{
+  border-radius: 15px;
+  display: flex;
+  width: 600px;
+  align-content: center;
+  align-items: center;
+  flex: 100%;
+  justify-content: center;
+  /* box-shadow: 1px 1px 20px rgba(41, 41, 41, 0.432); */
+}
+#card-body-text-dark{
+  width: 100%;
+}
+
+#results-cnpj a{
+  font-size: 1.5rem;
+  border: solid 2px;
+  border-radius: 20px;
+  color: #650da0;
+}
+
+#results-cnpj a{
+  background: white;
+}
+
+#results-cnpj a:hover {
+  color: #459A9E;
+}
+
+h2,p{
+  color:#650da0;
+  font-family: Poppins;
+}
+
+h1,h3{
+  text-align: left;
+  color:#650da0;
+  font-family: Archivo;
+  padding-left: 30px;
+}
+
+/* #space-heigth{
+  height: 100px;
+  width: 100%;
+  border:  solid black;
+  background: black;
+} */

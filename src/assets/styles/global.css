@@ -1,0 +1,61 @@
+:root {
+  font-size: 60%;
+  position: relative;
+  --color-background:  #3a8970;
+  --color-text-base: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(#650da0, #459A9E);
+  
+}
+
+ html, body, #root{
+  height: 100vh;
+  width: 100vw;
+} 
+
+#root{
+  display: flexbox;
+  align-items: center;
+  justify-content: center;
+}
+
+
+body,
+input,
+button,
+textarea {
+  font: 500 1.6rem Poppins;
+  color: var(--color-text-base);
+}
+
+.container {
+  width: 90vw;
+  max-width: 700px;
+}
+
+footer{
+  height: 150px;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-content: center;
+  position: relative;
+  color: rgb(71, 115, 236); 
+  background-color: white;
+  margin: 0;
+}
+
+@media (min-width: 700px) {
+  :root {
+    font-size: 62.5%;
+    display: grid;
+  }
+}

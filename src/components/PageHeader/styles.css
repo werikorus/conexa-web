@@ -1,0 +1,31 @@
+.page-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  position: relative;
+  }
+
+#text-header h1{
+  display: grid;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin-top: 135px;
+  margin-bottom: -650px;
+  font: 4.5rem Poppins;
+  color:  #ffffff;
+  text-shadow: 1px 1px rgb(44, 44, 44);
+  }
+
+img{
+  height: 34rem;
+  /* opacity: 60%; */
+}
+
+/* @media (min-width: 700px) {
+  .pageheader {
+    height: 340px;
+  }
+} */
+

@@ -1,0 +1,67 @@
+#page-map{
+  border-radius: 0px 30px 30px;
+  box-shadow: 1px 1px 20px rgba(41, 41, 41, 0.432);
+}
+
+#page-map .map-popup .leaflet-popup-content-wrapper{
+  background:rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  box-shadow: 17.2868px 27.6589px 41.4884px rgba(28, 36, 37, 0.16);
+}
+
+#page-map .map-popup .leaflet-popup-content{
+  color: #8003d3;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#page-map .map-popup .leaflet-popup-content a{
+  width: 80px;
+  height: 40px;
+  background: #8003d3;
+  box-shadow:  17.2868px 27.6589px 41.4884px rgba(28, 36, 37, 0.16);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#page-map .map-popup .leaflet-popup-tip-container{
+  display: none;
+}
+
+#card-body-text-dark a {
+  width: 14rem;
+  height: 4rem;
+  border-radius: 2.8rem;
+  border:solid;
+  font: Poppins;
+  margin-right: 1.6rem;
+  align-items: center;
+  justify-content: start;
+  text-decoration: none;
+  color: #650da0;
+  transition: color 0.2s;
+  padding-top: 4px;
+}
+
+#card-body-text-dark a{
+  font-size: 1.5rem;
+}
+
+#card-body-text-dark a{
+  background: white;
+}
+
+#card-body-text-dark a:hover {
+  color: #459A9E;
+}
+
+h2, p{
+  color:#650da0;
+  font-family: Poppins;
+}
