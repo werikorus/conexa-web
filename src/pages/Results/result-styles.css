@@ -3,18 +3,21 @@
   height: 100vh;
   max-width: 100%;
   display: flexbox;
-  flex: 100%;
+  /* flex: 100%; */
   justify-content: center;
   align-items: center;
   justify-self: center;
 }
 
 .page-results-maping main {
-  display: grid;
-  margin-top: 100px;
+  display: flex;
+  margin-top: 5%;
   justify-content: center;
   align-items: center;
   justify-self: center;
+  margin-right: 5%;
+  margin-left: 5%;
+  /* max-width: 600px; */
   /* width: 80%; */
   /* width: 400px; */
   /* max-width: 350px; */

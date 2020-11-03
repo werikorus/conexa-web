@@ -19,7 +19,7 @@ function Historico() {
         <main id="ResultsCards">
           {companies.map((company: Company) => {
             return <ResultsCardItem key={0} company={company} />;
-          })};
+          })}
         </main>
         <br />
         <Link to="/" id="button-back">Voltar</Link>

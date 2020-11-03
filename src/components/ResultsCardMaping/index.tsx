@@ -19,10 +19,13 @@ interface ResultsCardItemProps {
   company: Company;
 };
 
+// function excluirHistorico(){
+//   localStorage.removeItem('companies')
+// }
+
 const cardDOM = document.querySelector('#card-body-text-dark');
 
 const ResultsCardItem: React.FC<ResultsCardItemProps> = ({ company }) => {
-
   return (
     <form >
       <div className="card text-center" id="results-cnpj">

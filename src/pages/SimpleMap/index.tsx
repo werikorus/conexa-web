@@ -3,13 +3,19 @@ import { useParams } from 'react-router-dom';
 import 'leaflet/dist/leaflet.css';
 import './styles.css';
 import MapCard from '../../components/MapCard/MapCard';
-import api_cep from "../../services/apiViaCEP";
-import axios from 'axios';
 
-// -7.179673999999999/-48.20665899999999
+//  para testes -7.179673999999999/-48.20665899999999
 
 function SimpleMap() {
-  const { nome, cnpj, latitude, longitude } = useParams();
+  // const { nome, cnpj, latitude, longitude } = useParams();
+
+  const { nome, cnpj, latitude, longitude }: {
+    nome: string,
+    cnpj: string,
+    latitude: string
+    longitude: string
+  } = useParams();
+
   function showvalues() {
     console.log(latitude, longitude)
   };

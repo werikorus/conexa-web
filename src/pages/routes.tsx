@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Landing from "./Landing";
-import Results from './Results/index';
+import Results from './Results';
 import Historico from "./Historico";
-import SimpleMap from "./SimpleMap/index";
+import SimpleMap from "./SimpleMap";
 
 function Routes() {
   return (

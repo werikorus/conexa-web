@@ -10,8 +10,8 @@ import 'google-map-react';
 function Results() {
   const { cnpj }: { cnpj: string } = useParams();
   const [companies, setCompanies] = useState<Element>();
-  const [lati, setLat] = useState(0);
-  const [long, setlong] = useState(0);
+  const [lati, setLat] = useState<number>();
+  const [long, setlong] = useState<number>();
 
   var adress = '';
   const searchcnpj = useCallback(() => {
@@ -22,10 +22,9 @@ function Results() {
       dataType: 'jsonp',
       type: 'GET',
       success: function (data) {
+        adress = `${data.logradouro}, ${data.numero}, ${data.municipio}-${data.uf}`;
         // passa os valores para o card
         const addPostsInDOM = async () => {
-          adress = `${data.logradouro}, ${data.numero}, ${data.municipio}-${data.uf}`;
-
           var nomeCompany = data.nome;
           nomeCompany = nomeCompany.replace('/', '*');
 
@@ -77,7 +76,6 @@ function Results() {
             // insere no local starage
             localStorage.setItem('companies', JSON.stringify(empresas));
           }
-          addPostsInDOM();
           setCompanies(CardsCNPJ);
           updateLocalStorage();
         };
@@ -86,7 +84,7 @@ function Results() {
         axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
           params: {
             address: adress,
-            key: process.env.REACT_APP_LOCALIZACAO_TOKEN
+            key: 'AIzaSyC0qnQyANXBJhyPHYCKKcOqwvOv0CJz10Q'
           }
         })
           .then(function (response) {
@@ -94,6 +92,8 @@ function Results() {
             console.log(response);
             setLat(response.data.results[0].geometry.location.lat);
             setlong(response.data.results[0].geometry.location.lng);
+            addPostsInDOM();
+            console.log(`valor dentro da API geocode: ${lati}`);
           })
           .catch(function (error) {
             console.log(error);
@@ -114,6 +114,7 @@ function Results() {
       />
       {/* <button onClick={inputlati}>teste teste</button> */}
       <div className="page-results-maping">
+        {/* <button onClick={inputlati}>TESTETESTESTEST</button> */}
         <main id="ResultsCards">
           <ResultsCard
             corpo_html={companies}

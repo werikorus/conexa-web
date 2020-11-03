@@ -8,12 +8,12 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: content-box;
 }
 
 body {
-  background-image: linear-gradient(#650da0, #459A9E);
-  
+  /* background-image: linear-gradient(#650da0, #459A9E); */
+  background: linear-gradient(#470772, #470772);
 }
 
  html, body, #root{
@@ -53,9 +53,13 @@ footer{
   margin: 0;
 }
 
-@media (min-width: 700px) {
+/* @media (max-width: 500px) {
   :root {
     font-size: 62.5%;
     display: grid;
   }
-}
+  img{
+    width: 500px;
+    height: 50px;
+  }
+} */
