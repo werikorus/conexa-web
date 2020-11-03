@@ -87,7 +87,7 @@ function Results() {
         axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
           params: {
             address: adress,
-            key: 'AIzaSyC0qnQyANXBJhyPHYCKKcOqwvOv0CJz10Q'
+            key: process.env.REACT_APP_LOCALIZACAO_TOKEN
           }
         })
           .then(function (response) {
