@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import PageHeader from '../../components/PageHeader';
 import ResultsCard from '../../components/ResultsCard/BKP';
@@ -8,14 +8,13 @@ import './result-styles.css';
 import 'google-map-react';
 
 function Results() {
-  const { cnpj } = useParams();
-  const [companies, setCompanies] = useState([]);
+  const { cnpj }: { cnpj: string } = useParams();
+  const [companies, setCompanies] = useState<Element>();
   const [lati, setLat] = useState(0);
   const [long, setlong] = useState(0);
 
   var adress = '';
-
-  const searchcnpj = () => {
+  const searchcnpj = useCallback(() => {
     const CardsCNPJ = document.querySelector('#card-body-text-dark');
 
     jQuery.ajax({
@@ -101,7 +100,7 @@ function Results() {
           });
       },
     });
-  };
+  }, [lati, long])
 
   function inputlati() {
     console.log(`A latitude é : ${lati}`);
