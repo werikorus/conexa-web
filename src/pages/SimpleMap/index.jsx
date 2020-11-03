@@ -19,8 +19,8 @@ function SimpleMap() {
         <MapCard
           companyname={nome.replace('*', '/')}
           cnpj={cnpj.replace('*', '/')}
-          latitude={latitude}
-          longitude={longitude}
+          latitude={-7.179673999999999}
+          longitude={-48.20665899999999}
         />
       </div>
     </div >
