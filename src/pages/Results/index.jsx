@@ -113,7 +113,7 @@ function Results() {
       <PageHeader
         title="Empresa encontrada"
       />
-      <button onClick={inputlati}>teste teste</button>
+      {/* <button onClick={inputlati}>teste teste</button> */}
       <div className="page-results-maping">
         <main id="ResultsCards">
           <ResultsCard
