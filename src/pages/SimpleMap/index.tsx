@@ -7,8 +7,6 @@ import MapCard from '../../components/MapCard/MapCard';
 //  para testes -7.179673999999999/-48.20665899999999
 
 function SimpleMap() {
-  // const { nome, cnpj, latitude, longitude } = useParams();
-
   const { nome, cnpj, latitude, longitude }: {
     nome: string,
     cnpj: string,
@@ -25,12 +23,12 @@ function SimpleMap() {
         <MapCard
           companyname={nome.replace('*', '/')}
           cnpj={cnpj.replace('*', '/')}
-          latitude={-7.179673999999999}
-          longitude={-48.20665899999999}
+          latitude={parseInt(latitude)}
+          longitude={parseInt(longitude)}
         />
       </div>
     </div >
   );
-
 };
+
 export default SimpleMap;

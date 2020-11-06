@@ -1,7 +1,6 @@
 #page-content{
   width: 100vw;
   height: 100vh;
-  max-width: 100%;
   display: flexbox;
   flex: 100%;
   
@@ -10,20 +9,6 @@
   justify-self: center;
 }
 
-/* #results-card{
-  border-radius: 0 0 15px 15px;
-  position: relative;
-  align-items: center;
-  box-shadow: 3px 3px 20px rgba(41, 41, 41, 0.432);
-}
-
-#results-card a{
-  font-size: 1.5rem;
-  border: solid 2px;
-  border-radius: 20px;
-  color: #650da0;
-} */
-
 #button-back {
   width: 15rem;
   height: 6rem;
@@ -31,7 +16,6 @@
   border-radius: 25px;
   font: Poppins;
   font-size: 2.4rem;
-  /* position: relative; */
 
   align-items: center;
   justify-content: center;

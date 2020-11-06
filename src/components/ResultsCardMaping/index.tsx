@@ -16,29 +16,34 @@ export interface Company {
 };
 
 interface ResultsCardItemProps {
-  company: Company;
+  company: Company,
+  lat?: number,
+  long?: number;
 };
 
-// function excluirHistorico(){
-//   localStorage.removeItem('companies')
-// }
+const ResultsCardItem: React.FC<ResultsCardItemProps> = ({ company, lat, long }) => {
+  var nomeCompany = company.nome;
+  nomeCompany = nomeCompany.replace('/', '*');
 
-const cardDOM = document.querySelector('#card-body-text-dark');
+  var cnpjCompany = company.cnpj;
+  cnpjCompany = cnpjCompany.replace('/', '*');
 
-const ResultsCardItem: React.FC<ResultsCardItemProps> = ({ company }) => {
   return (
     <form >
       <div className="card text-center" id="results-cnpj">
         <div className="card-body text-dark" id="card-body-text-dark">
-          <strong><h1 className="card-title">{company.nome}</h1></strong>
-          <h3 className="card-text">Cnpj: {company.cnpj}</h3>
+          <strong><h1 className="card-title">{nomeCompany}</h1></strong>
+          <h3 className="card-text">Cnpj: {cnpjCompany}</h3>
+          <h3 className="card-text">Endereço: {company.logradouro}</h3>
+          <h3 className="card-text">Complemento: {company.complemento}  Nº: {company.numero}</h3>
+          <h3 className="card-text">Bairro: {company.bairro}</h3>
           <h3 className="card-text">Cidade: {company.municipio}-{company.uf}</h3>
-          <a href={`/SimpleMap/${company.nome}/${company.cnpj}/${company.cep}`} className="btn btn-outline-succces" >Ver no Mapa</a>
-          <a className="btn btn-outline-succces" >Excluir</a>
+          <a href='/' className="btn btn-outline-succces" >Voltar</a>
+          <a href={`/SimpleMap/${nomeCompany}/${cnpjCompany}/${lat}/${long}`} className="btn btn-outline-succces" >Ver no Mapa</a>
         </div>
       </div >
       <br />
-    </form>
+    </form >
   );
 };
 

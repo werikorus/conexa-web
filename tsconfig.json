@@ -21,7 +21,8 @@
     "strict": true
   },
   "include": [
-    "src"
+    "src",
+    ".js"
   ],
   "rules": {
     "no-unused-vars": "off",

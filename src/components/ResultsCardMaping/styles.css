@@ -1,29 +1,29 @@
 #results-cnpj{
   border-radius: 15px;
-  display: flexbox;
-  /* width: 600px; */
+  display: flex;
+  flex: 100%;
   align-content: center;
   align-items: center;
-  flex: 100%;
   justify-content: center;
-  justify-self: center;
-  box-shadow: 1px 1px 20px rgba(41, 41, 41, 0.432);
+  box-shadow: 1px 1px 20px rgba(41, 41, 41, 5);
 }
+
 #card-body-text-dark{
   width: 100%;
-  display: flexbox;
+  margin-top: 10px;
 }
 
 #results-cnpj a{
   font-size: 1.5rem;
-  border: solid 2px;
   border-radius: 20px;
   color: #650da0;
+  margin-top: 10px;
+  max-width: 600px;
+  min-width: 100px;
 }
 
 #results-cnpj a{
   background: white;
-  transition: color 0.2s;
 }
 
 #results-cnpj a:hover {

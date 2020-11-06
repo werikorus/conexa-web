@@ -1,10 +1,9 @@
 #results-cnpj{
   border-radius: 15px;
   display: flex;
-  width: 600px;
+  flex: 100%;
   align-content: center;
   align-items: center;
-  flex: 100%;
   justify-content: center;
   box-shadow: 1px 1px 20px rgba(41, 41, 41, 5);
 }
@@ -16,10 +15,11 @@
 
 #results-cnpj a{
   font-size: 1.5rem;
-  border: solid 2px;
   border-radius: 20px;
   color: #650da0;
-  margin-top: 8px;
+  margin-top: 10px;
+  max-width: 600px;
+  min-width: 100px;
 }
 
 #results-cnpj a{

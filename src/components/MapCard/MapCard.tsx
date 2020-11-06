@@ -29,8 +29,8 @@ const MapCard: React.FC<MapCardProps> = (props) => {
         <div style={{ height: '50%', width: '100%' }}>
           <Map
             center={[props.latitude, props.longitude]}
-            zoom={13}
-            style={{ height: '450px', width: "100%" }}
+            zoom={15}
+            style={{ height: '490px', width: "100%" }}
           >
             <TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             <Marker
