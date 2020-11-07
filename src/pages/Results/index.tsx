@@ -1,37 +1,33 @@
 import React, { useState, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import PageHeader from '../../components/PageHeader';
-import ResultsCard from '../../components/ResultsCard/BKP';
+import ResultsCardMessageItem, { ResultsMessage } from '../../components/ResultsCard/index';
+import ResultsCardItem, { Company } from '../../components/ResultsCardMaping';
 import jQuery from 'jquery';
 import apiGeocode from '../../services/apiGeocode';
 import './result-styles.css';
-import 'google-map-react';
 import './setLocalStorage.js';
-import './addElementDOM.js';
-import ResultsCardItem, { Company } from '../../components/ResultsCardMaping';
+
 
 function Results() {
   var { cnpj }: { cnpj: string } = useParams();
-  // var [companies, setCompanies] = useState<Element>();
   const [companies, setCompanies] = useState([]);
-  const [error, setError] = useState<Element>();
-  var [lati, setLat] = useState<number>();
-  var [long, setlong] = useState<number>();
+  const [messages, setMessages] = useState([]);
+  const [lati, setLat] = useState<number>();
+  const [long, setlong] = useState<number>();
   var [dadosResponse, setDadosResponse] = useState<object>();
   var adress = '';
 
   var statusResponse = '';
 
   const searchcnpj = useCallback(() => {
-    const AlertCard = document.querySelector('#card-body-text-dark');
-
     jQuery.ajax({
       url: `https://receitaws.com.br/v1/cnpj/${cnpj}`,
       dataType: 'jsonp',
       type: 'GET',
       success: function (data) {
         // set adress for localization api
-        var montaadress = `${data.logradouro}, ${data.numero}, ${data.bairro}, ${data.municipio}-${data.uf}`;
+        var montaadress = `${data.logradouro}, ${data.numero}, ${data.bairro}, ${data.municipio}-${data.uf}, ${data.cep}`;
         adress = montaadress;
 
         statusResponse = `${data.status}`;
@@ -44,6 +40,28 @@ function Results() {
           //set response atributes for ResultCard
           var dadosCnpjs = [{
             status: data.status,
+            message: data.message,
+            cnpj: data.cnpj,
+            nome: data.nome,
+            fantasia: data.fantasia,
+            cep: data.cep,
+            logradouro: data.logradouro,
+            numero: data.numero,
+            complemento: data.complemento,
+            bairro: data.bairro,
+            municipio: data.municipio,
+            uf: data.uf,
+            latitude: lati,
+            longitude: long,
+          }];
+
+          setDadosResponse(dadosCnpjs);
+          setCompanies(dadosCnpjs);
+
+
+          var localinfo = {
+            status: data.status,
+            message: data.message,
             cnpj: data.cnpj,
             nome: data.nome,
             fantasia: data.fantasia,
@@ -56,17 +74,15 @@ function Results() {
             uf: data.uf,
             latitude: lati,
             longitude: long
-          }];
-          // setDadosResponse(dadosCnpjs);
-          setCompanies(dadosCnpjs)
-        } else {
-          const template =
-            `<strong><h1 className="card-title">${data.message}</h1></strong>
-            <a href='/' class="btn btn-outline-succces" >Voltar</a>`;
-          AlertCard.innerHTML = template;
-          setError(AlertCard);
-        }
+          };
 
+          setLocalData(localinfo);
+        } else {
+          var messageReturn = [{
+            message: data.message,
+          }];
+          setMessages(messageReturn);
+        }
       },
       error: function (error) {
         console.log(error);
@@ -92,6 +108,26 @@ function Results() {
         console.log(error);
       });
   };
+
+
+  function setLocalData(dados:object) {
+    let empresas = JSON.parse(localStorage
+      .getItem('companies')) || []
+
+    //  se ja tem o mesmo valor dentro do localStorage, remover
+    const index = empresas.indexOf(dados)
+    const existsInLocalStorage = (index !== -1);
+
+    if (existsInLocalStorage) {
+      empresas.splice(index, 1)
+    } else {
+      empresas.push(dados)
+    };
+
+    // insere no local starage
+    localStorage.setItem('companies', JSON.stringify(empresas));
+  };
+
   return (
     <div id="page-content" onLoad={searchcnpj}>
       <PageHeader
@@ -100,9 +136,12 @@ function Results() {
       <div className="page-results-maping">
         <main id="ResultsCards">
           <main id="ResultsCards">
-            {/* <ResultsCard
-              corpo_html={error}
-            /> */}
+            {/* if have not find the company, returns a message saying that not found */}
+            {messages.map((message: ResultsMessage) => {
+              return <ResultsCardMessageItem key={0} resultsMessage={message} />;
+            })}
+
+            {/* if have find, then shows the campany's informations */}
             {companies.map((company: Company) => {
               return <ResultsCardItem key={0} company={company} lat={lati} long={long} />;
             })}

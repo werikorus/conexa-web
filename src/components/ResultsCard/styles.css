@@ -30,14 +30,8 @@
   color: #459A9E;
 }
 
-h2,p{
-  color:#650da0;
-  font-family: Poppins;
-}
-
-h1,h3{
-  text-align: left;
+h1{
+  text-align: center;
   color:#650da0;
   font-family: Archivo;
-  padding-left: 30px;
 }

@@ -15,10 +15,11 @@ function Landing() {
       setCnpj(x.slice(0, 1));
     });
   };
+
   return (
     <div id="page-landing">
       <PageHeader
-        title="Localizador de Empresas"
+        title="Localize | Empresas"
         description="Insira o CNPJ abaixo"
       />
 

@@ -2,7 +2,7 @@ function setLocalData(dadoscnpj) {
   let empresas = JSON.parse(localStorage
     .getItem('companies')) || []
 
-  //  se ja tem o mesmo valor dentro do localStorage, remover 
+  //  se ja tem o mesmo valor dentro do localStorage, remover
   const index = empresas.indexOf(dadoscnpj)
   const existsInLocalStorage = (index !== -1);
 
@@ -16,3 +16,4 @@ function setLocalData(dadoscnpj) {
   localStorage.setItem('companies', JSON.stringify(empresas));
 
 };
+

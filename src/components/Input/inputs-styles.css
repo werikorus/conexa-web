@@ -8,16 +8,15 @@ input{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 360px;
+  justify-self: center;
+  width: 335px;
+  max-width: 335px;
   height: 6.5rem;
   border-radius: 1.2rem;
   color: #650da0;
   border: 1px solid white;
   outline: 0;
-  padding: 0 6.6rem;
+  padding-left: 53px;
+  /* padding: 0 6.6rem; */
   font: 1.6rem Poppins;
   }
-input a{
-  align-items: center;
-  align-content: center;
-}

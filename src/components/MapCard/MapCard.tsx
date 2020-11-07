@@ -18,24 +18,28 @@ const mapIcon = Leaflet.icon({
 // {parâmetros que serao passados para localizaçao da empresa no mapa}
 interface MapCardProps {
   companyname: string;
-  cnpj: String;
-  latitude?: number;
-  longitude?: number;
+  cnpj: string;
+  latitude?: string;
+  longitude?: string;
 }
 const MapCard: React.FC<MapCardProps> = (props) => {
+  var lat = parseFloat(props.latitude);
+  var lng = parseFloat(props.longitude);
+
+  console.log(`Localização lat e long : ${lat}  ${lng}`)
   return (
     <div className="card text-center" id="page-map">
       <div id="overflow">
         <div style={{ height: '50%', width: '100%' }}>
-          <Map
-            center={[props.latitude, props.longitude]}
+           <Map
+            center={[lat, lng]}
             zoom={15}
-            style={{ height: '490px', width: "100%" }}
+            style={{ height: '485px', width: "100%" }}
           >
             <TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             <Marker
               icon={mapIcon}
-              position={[props.latitude, props.longitude]}>
+              position={[lat, lng]}>
               <Popup closeButton={false} minWidth={240} maxWidth={240} className="map-popup">
                 {`${props.companyname}`}
                 <Link to="/">

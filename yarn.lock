@@ -1102,10 +1102,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-10.1.0.tgz#f0950bba18819512d42f7197e56c518aa491cf18"
   integrity sha512-ij4wRiunFfaJxjB0BdrYHIH8FxBJpOwNPhhAcunlmPdXudL1WQV1qoP9un6JsEBAgQH+7UXyyjh0g7jTxXK6tg==
 
-"@googlemaps/js-api-loader@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@googlemaps/js-api-loader/-/js-api-loader-1.2.0.tgz#d5229607638932ae7d0c1e91d1fc19784238834e"
-  integrity sha512-iSE0dRlnOSVOL07FJq7M0Vvi6se1gaJH196yZ04a1TZmKiDDAoVftl+OOv/sL1RgnOwk67mlsDF9o7p8TkdVmg==
+"@googlemaps/js-api-loader@^1.7.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@googlemaps/js-api-loader/-/js-api-loader-1.8.0.tgz#7ee2f77da1a84476f8eec61156e858662078711a"
+  integrity sha512-aFxlJVFOC00KELhlaqU6tpnxj9szVdG7OSHxQzc9uhp4Ky8/zvYNnzZg2S+pPvhe+WkJPugQL8fowP5nYTBXUg==
 
 "@hapi/address@2.x.x":
   version "2.1.4"
@@ -5083,12 +5083,12 @@ globby@^6.1.0:
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
 
-google-map-react@^2.1.6:
-  version "2.1.6"
-  resolved "https://registry.yarnpkg.com/google-map-react/-/google-map-react-2.1.6.tgz#ac73439b2e00ae04d0515a18cb97c7337eff5e32"
-  integrity sha512-g/5M5kMMO657U2Re1Ph6SFgfG0YzcCoAPklDo0L0j9YWyLH2sHzRNm8bCMjcuxHIOUFym8zmSy/7eCKaeVID7w==
+google-map-react@^2.1.9:
+  version "2.1.9"
+  resolved "https://registry.yarnpkg.com/google-map-react/-/google-map-react-2.1.9.tgz#6e539ce8bf28e7b8cda6058402e7581d1d1cec3d"
+  integrity sha512-//Pa0o6sdspU2H0ehVztSDQSnYYeV6TY4Z6ftty34yiCJYLliOzeq17dA9uFkyUFdL+XwbTU6e9mfs+bjBMIzw==
   dependencies:
-    "@googlemaps/js-api-loader" "^1.2.0"
+    "@googlemaps/js-api-loader" "^1.7.0"
     "@mapbox/point-geometry" "^0.1.0"
     eventemitter3 "^4.0.4"
     prop-types "^15.7.2"
