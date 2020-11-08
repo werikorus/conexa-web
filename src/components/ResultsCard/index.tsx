@@ -18,7 +18,7 @@ const ResultsCardMessageItem: React.FC<ResultsMessageItemProps> = ({ resultsMess
       <div className="overflow">
         <div className="card-body text-dark" id="card-body-text-dark">
           <strong><h1 className="card-title">{resultsMessage.message}.</h1></strong>
-          {/* <a href='/' className="btn btn-outline-succces" >OK</a> */}
+          <a href='/' className="btn btn-outline-succces" >OK</a>
         </div>
       </div>
     </div >
