@@ -9,7 +9,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 const Input: React.FC<InputProps> = ({ name, placeholder, ...rest }) => {
   return (
     <div className="input-cnpj">
-      <input type="text" data-mask="00.000.000/0000-00" id={name} placeholder={placeholder} {...rest} />
+      <input type="text" id={name} placeholder={placeholder} {...rest} />
     </div>
   );
 }

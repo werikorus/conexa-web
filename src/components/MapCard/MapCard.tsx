@@ -34,7 +34,7 @@ const MapCard: React.FC<MapCardProps> = (props) => {
            <Map
             center={[lat, lng]}
             zoom={15}
-            style={{ height: '485px', width: "100%" }}
+            style={{ height: '475px', width: "100%" }}
           >
             <TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             <Marker

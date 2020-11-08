@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import './styles.css';
 
 function Landing() {
+
   var [cnpj, setCnpj] = useState('');
 
   const inputmask = (value) => {
@@ -27,7 +28,6 @@ function Landing() {
         <Input
           name='input-cnpj'
           placeholder='CNPJ...'
-          // onChange={(e) => { setCnpj(e.target.value) }}
           onChange={(event) => {
             const { value } = event.target
             event.target.value = inputmask(value)

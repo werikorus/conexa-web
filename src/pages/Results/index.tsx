@@ -15,10 +15,9 @@ function Results() {
   const [messages, setMessages] = useState([]);
   const [lati, setLat] = useState<number>();
   const [long, setlong] = useState<number>();
-  var [dadosResponse, setDadosResponse] = useState<object>();
   var adress = '';
 
-  var statusResponse = '';
+
 
   const searchcnpj = useCallback(() => {
     jQuery.ajax({
@@ -30,10 +29,8 @@ function Results() {
         var montaadress = `${data.logradouro}, ${data.numero}, ${data.bairro}, ${data.municipio}-${data.uf}, ${data.cep}`;
         adress = montaadress;
 
-        statusResponse = `${data.status}`;
-
         // if had found the company, then search geocode information
-        if (data.status == "OK") {
+        if (data.status === "OK") {
           // searching on map
           searchlocalization(adress);
 
@@ -54,8 +51,6 @@ function Results() {
             latitude: lati,
             longitude: long,
           }];
-
-          setDadosResponse(dadosCnpjs);
           setCompanies(dadosCnpjs);
 
 
@@ -88,7 +83,7 @@ function Results() {
         console.log(error);
       }
     });
-  }, [lati, long]);
+  }, [lati, long, adress]);
 
   function searchlocalization(adr: string) {
     // localization on map

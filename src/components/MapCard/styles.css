@@ -67,10 +67,10 @@ h2, p{
 }
 
 
-@media (max-width: 500px) {
+/* @media (max-width: 500px) {
   #page-map{
     border-radius: 0px 0px 0px 0px;
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0);
   }
 
-}
+} */
