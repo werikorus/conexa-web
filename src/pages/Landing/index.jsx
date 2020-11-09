@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Input from '../../components/Input/index';
 import PageHeader from '../../components/PageHeader';
+import ResultsCardMessageItem, { ResultsMessage } from '../../components/ResultsCard/index';
 import SearchImg from '../../assets/images/icons/search-solid.svg'
 import { Link } from 'react-router-dom';
 import './styles.css';
@@ -8,6 +9,7 @@ import './styles.css';
 function Landing() {
 
   var [cnpj, setCnpj] = useState('');
+  const [msg, setMessages] = useState([]);
 
   const inputmask = (value) => {
     document.querySelector('#input-cnpj').addEventListener('input', function (e) {
@@ -16,7 +18,6 @@ function Landing() {
       setCnpj(x.slice(0, 1));
     });
   };
-
   return (
     <div id="page-landing">
       <PageHeader
@@ -35,7 +36,8 @@ function Landing() {
         />
         <br />
         <div className="botoes">
-          <Link to={`Results/${cnpj}`} className="button-search" id="btn_search">
+          {/* <Link to={`Results/${cnpj}`} className="button-search" id="btn_search"> */}
+          <Link  to={`Results/${cnpj}`} className="button-search" id="btn_search">
             Buscar
           </Link>
           <Link to={'/Historico'} className="button-search" id="btn_history">

@@ -18,8 +18,11 @@ function Results() {
   var adress = '';
 
 
-
   const searchcnpj = useCallback(() => {
+    if(cnpj==''){
+      var msg = [{message: "Primeiramente insira um CNPJ!"}];
+      setMessages(msg);
+    }else{
     jQuery.ajax({
       url: `https://receitaws.com.br/v1/cnpj/${cnpj}`,
       dataType: 'jsonp',
@@ -53,7 +56,6 @@ function Results() {
           }];
           setCompanies(dadosCnpjs);
 
-
           var localinfo = {
             status: data.status,
             message: data.message,
@@ -73,16 +75,14 @@ function Results() {
 
           setLocalData(localinfo);
         } else {
-          var messageReturn = [{
-            message: data.message,
-          }];
+          var messageReturn = [{message: data.message}];
           setMessages(messageReturn);
-        }
+        };
       },
       error: function (error) {
         console.log(error);
       }
-    });
+    }) };
   }, [lati, long, adress]);
 
   function searchlocalization(adr: string) {

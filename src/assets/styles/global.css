@@ -57,6 +57,7 @@ footer{
   :root {
     font-size: 62.5%;
     display: grid;
+
   }
   h1{
     justify-content: center;
@@ -65,3 +66,4 @@ footer{
     margin-left: 15%;
   }
 }
+
