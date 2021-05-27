@@ -23,8 +23,8 @@ interface MapCardProps {
   longitude?: string;
 }
 const MapCard: React.FC<MapCardProps> = (props) => {
-  var lat = parseFloat(props.latitude);
-  var lng = parseFloat(props.longitude);
+  var lat = -7.179673999999999; //parseFloat(props.latitude);
+  var lng = -48.20665899999999;//parseFloat(props.longitude);
 
   console.log(`Localização lat e long : ${lat}  ${lng}`)
   return (
