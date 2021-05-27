@@ -119,7 +119,7 @@ function Results() {
       empresas.push(dados)
     };
 
-    // insere no local starage
+    // insere no local storage
     localStorage.setItem('companies', JSON.stringify(empresas));
   };
 
